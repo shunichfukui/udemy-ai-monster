@@ -1,5 +1,11 @@
 import styles from './page.module.css';
 
 export default function Home() {
-  return <main className={styles.main}>テスト</main>;
+  return (
+    <div className={styles.container}>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Ai Monster Generator</h1>
+      </main>
+    </div>
+  );
 }
