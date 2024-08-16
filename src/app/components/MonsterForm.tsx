@@ -4,9 +4,10 @@ import { MONSTER_ATTRIBUTES } from '../constants/attributes';
 
 type MonsterFormProps = {
   onSubmit: (description: string, attribute: string) => void;
+  isGeneratedMonsterImg: boolean;
 };
 
-const MonsterForm = ({ onSubmit }: MonsterFormProps) => {
+const MonsterForm = ({ onSubmit, isGeneratedMonsterImg }: MonsterFormProps) => {
   const [description, setDescription] = useState('');
   const [attribute, setAttribute] = useState('');
 
@@ -53,7 +54,9 @@ const MonsterForm = ({ onSubmit }: MonsterFormProps) => {
       </div>
 
       <button type="submit" className={styles.button}>
-        モンスターの画像生成
+        {isGeneratedMonsterImg
+          ? '再度画像を生成し直す'
+          : 'モンスターの画像生成'}
       </button>
     </form>
   );

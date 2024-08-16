@@ -34,7 +34,10 @@ export default function Home() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>Ai Monster Generator</h1>
-        <MonsterForm onSubmit={handleFormSubmit} />
+        <MonsterForm
+          onSubmit={handleFormSubmit}
+          isGeneratedMonsterImg={!!monsterImg}
+        />
         <div className={styles.imageContainer}>
           {isLoading ? (
             <LoadingSection />
