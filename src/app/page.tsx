@@ -19,6 +19,15 @@ export default function Home() {
     setIsLoading(false);
   };
 
+  const handleTwitterShare = () => {
+    const shareUrl = encodeURIComponent(monsterImg);
+    const twitterText = encodeURIComponent(
+      `ついに発見！ ${formData.description} ${formData.attribute}タイプの新しいモンスター！？ 😆 \n #モンスター画像生成`
+    );
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${twitterText}&url=${shareUrl}`;
+    window.open(twitterUrl, '_blank');
+  };
+
   const LoadingSection = () => (
     <>
       <Loading
@@ -51,6 +60,12 @@ export default function Home() {
                   width={300}
                   height={300}
                 />
+                <button
+                  className={styles.shareButton}
+                  onClick={handleTwitterShare}
+                >
+                  X（旧Twitter）にシェアする
+                </button>
               </>
             )
           )}
